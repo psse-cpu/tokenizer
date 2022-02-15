@@ -18,10 +18,12 @@ export default class InfixTokenizer {
 
   constructor(
     expression: string, 
-    functions: string[] = DEFAULT_FUNCTIONS
+    additionalFunctions: string[] = []
   ) {
     this.expression = expression.replaceAll(' ', '') // strip spaces for infix
-    const regexSource = `\\d+(\\.\\d+)?|${functions.join('|')}|[()*/^+-]`
+    const functionsRegex = additionalFunctions.concat(DEFAULT_FUNCTIONS).join('|')
+
+    const regexSource = `\\d+(\\.\\d+)?|${functionsRegex}|[()*/^+-]`
     this.regex = new RegExp(regexSource, 'g')
   }
 

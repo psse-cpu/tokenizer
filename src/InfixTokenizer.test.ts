@@ -51,4 +51,25 @@ describe('InfixTokenizer', () => {
       ')'
     ])
   })
+
+  it('can recognize additional functions', () => {
+    const tokenizer = new InfixTokenizer('cosh(9) + cos(5)', ['sinh', 'cosh'])
+    const tokens = []
+
+    while (tokenizer.hasMoreTokens()) {
+      tokens.push(tokenizer.readToken())
+    }
+
+    expect(tokens).toEqual([
+      'cosh',
+      '(',
+      '9',
+      ')',
+      '+',
+      'cos',
+      '(',
+      '5',
+      ')'
+    ])
+  })
 })

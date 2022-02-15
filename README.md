@@ -37,3 +37,39 @@ tokenizer.readToken() // )
 tokenizer.hasMoreTokens() // false
 tokenizer.readToken() // undefined
 ```
+
+Default function names recognized are:
+```ts
+[
+  'sin',
+  'cos',
+  'tan',
+  'arcsin',
+  'arccos',
+  'arctan',
+  'log',
+  'ln',
+  'sqrt',
+  'cbrt'
+]
+```
+
+If you need more Math functions, just give your own custom list in
+the constructor.
+
+```ts
+let tokenizer = new InfixTokenizer('cosh(9) + cos(5)', ['sinh', 'cosh'])
+// tokens are 
+
+[
+  'cosh',
+  '(',
+  '9',
+  ')',
+  '+',
+  'cos',
+  '(',
+  '5',
+  ')'
+]
+```
