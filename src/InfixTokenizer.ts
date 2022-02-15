@@ -25,15 +25,22 @@ export default class InfixTokenizer {
 
     const regexSource = `\\d+(\\.\\d+)?|${functionsRegex}|[()*/^+-]`
     this.regex = new RegExp(regexSource, 'g')
+
+    this.#advance()
+  }
+
+  #advance() {
+    const match = this.regex.exec(this.expression)
+    this.nextToken = match?.[0]
   }
 
   hasMoreTokens() {
-    const match = this.regex.exec(this.expression)
-    this.nextToken = match?.[0]
-    return Boolean(match)
+    return Boolean(this.nextToken)
   }
 
   readToken() {
-    return this.nextToken
+    const current = this.nextToken
+    this.#advance()
+    return current
   }
 }
