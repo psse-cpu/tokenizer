@@ -1,6 +1,6 @@
 {
   "name": "@psse-cpu/tokenizer",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Tokenizers for Infix strings. Only for SE-1222 (Data Structures) class, not for production use.",
   "main": "dist/InfixTokenizer.js",
   "types": "dist/InfixTokenizer.d.ts",
