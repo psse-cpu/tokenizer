@@ -1,8 +1,7 @@
 ### InfixTokenizer
 
 Use this package if you find it hard to tokenize infix expressions.
-
-#### :warning: :warning: Might contain bugs, not for production use.
+Meant to be used for my SE-1222 (Data Structures) class, and not for production use.
 
 ### Getting started
 
