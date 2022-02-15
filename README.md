@@ -35,13 +35,5 @@ tokenizer.readToken() // 1
 tokenizer.hasMoreTokens() // true
 tokenizer.readToken() // )
 tokenizer.hasMoreTokens() // false
-tokenizer.readToken() // null
+tokenizer.readToken() // undefined
 ```
-
-### Alternatives
-
-`Object.seal` can also mimic fixed-size arrays, but silently failing in some
-illegal operations may trip off beginners.
-
-```js
-let x = Object.seal([1, 2, 3])
