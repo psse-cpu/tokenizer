@@ -2,7 +2,7 @@
 
 Use this package if you find it hard to tokenize infix expressions.
 
-#### :warning: :warning: Might contains bugs, not for production use.
+#### :warning: :warning: Might contain bugs, not for production use.
 
 ### Getting started
 
